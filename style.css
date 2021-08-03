@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+html, body {
+  font-family: 'Opens Sans', sans-serif;
+}
+
+
+.container {
+  max-width: 1440px;
+  width: 90%;
+  margin: 2em auto;
+}
+
+a:hover {
+  outline: none;
+}
+
+
+
+/* tabs  */
+
+.tabs {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.tabs ul {
+  display: flex;
+  align-items:  center;
+  justify-content: center;
+
+}
+
+.tabs ul li {
+  list-style-type: none;
+}
+
+.tabs ul a {
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.125rem;
+  padding: 0.5em 3rem;
+  border: 1px solid #000;
+  transition: all 0.3s ease;
+}
+/* 
+.tabs a:hover {
+  background-color: #000;
+  color: #fff;
+} */
+
+.tabs a.active {
+  background-color: #000;
+  color: #fff;
+}
+
+
+/* tabs content */
+
+.content {
+  display: none;
+}
+
+.content.active {
+  display: block;
+}
+
+.tabs-content {
+  text-align: center;
+}
+
+.tabs-content p {
+  padding: 2em 0; 
+}
+
+
+/* tabs content - material */
+
+.material-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item {
+  margin-right: 2em;
+  text-align: center;
+}
+
+.item h2 {
+  font-weight: 500;
+  margin-bottom: -25px;
+  font-size: 2.7rem;
+}
+
+#material hr {
+  text-align: center;
+  width: 45px;
+  margin: 0 auto;
+  margin-bottom: 0.8em;
+}
+
+
+
+/* media queries */
+
+@media (max-width: 500px) {
+  .container {
+    max-width: 500px;
+    width: 90%;
+    margin: 1em auto;
+  }
+
+  .tabs {
+    text-align: left;
+    width: 100%; 
+  }
+
+  .tabs ul  {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tabs ul li {
+    width: 100%;
+  }
+
+  .tabs ul a {
+    border: 0;
+    padding-left: 9px;
+    position: relative;
+
+  }
+
+
+  .tabs ul .guide {
+    border-bottom: 1px solid #000;
+    width: 100%;
+  }
+  .tabs ul .material {
+    border-top: 2px solid #000;
+    width: 100%;
+  }
+
+  .tabs a .plus, 
+  .tabs a .minus{
+    content: "";
+		position: absolute;
+		top: 40%;
+		right: 0;
+		margin: 0 0 -8px;
+	  background: #000;
+		border-radius: 2px;
+  }
+
+  .tabs a .plus {
+		right: 8px;
+		width: 2px;
+		height: 15px;
+		transition:all 300ms;
+		margin-top: -7.5px;
+		background: #000;
+		
+  }
+
+  .tabs a .minus {
+    right: 1px;
+		width: 16px;
+		height: 3px;
+		margin-top: -1.5px;
+		background: #000;
+  }
+
+  .tabs a.active {
+    background-color: transparent;
+    color: #000;
+  }
+
+  .tabs a .plus.expanded {
+    height:0;
+    margin-top:0;
+  }
+  
+  /* tabs content */
+  .content {
+    transform: translateX(-1000px);
+    transition: translate 0.3s ease-in;
+  }
+
+  .content.active {
+    transform: translateX(0);
+  }
+
+
+}
